@@ -35,9 +35,9 @@ const station = {
       windDirection: request.body.windDirection,
     };
     logger.debug("New Reading = ", newReading);
-    stationStore.addRead(playlistId, newSong);
-    response.redirect("/playlist/" + playlistId);
+    stationStore.addReading(stationId, newReading);
+    response.redirect("/station/" + stationId);
   }
 };
 
-module.exports = playlist;
+module.exports = station;
