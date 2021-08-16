@@ -21,14 +21,16 @@ const reading = {
     const readingId = request.params.readingid;
     const reading = stationStore.getReading(stationId, readingId)
     const newReading = {
-      title: request.body.title,
-      artist: request.body.artist,
-      duration: Number(request.body.duration)
+      code: request.body.code,
+      temperature: request.body.artist,
+      windSpeed: request.body.windSpeed,
+      pressure: request.body.pressure,
+      windDirection: request.body.windDirection,
     };
-    logger.debug(`Updating Song ${songId} from Playlist ${playlistId}`);
-    playlistStore.updateSong(song, newSong);
-    response.redirect("/playlist/" + playlistId);
+    logger.debug(`Updating Reading ${readingId} from Station ${stationId}`);
+    stationStore.updateReading(reading, newReading);
+    response.redirect("/station/" + stationId);
   }
 };
 
-module.exports = song;
+module.exports = reading;
