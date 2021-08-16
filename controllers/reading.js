@@ -9,7 +9,7 @@ const reading = {
     const readingId = request.params.readingid;
     logger.debug(`Editing Reading ${readingId} from Station ${stationId}`);
     const viewData = {
-      title: "Edit Song",
+      title: "Edit Reading",
       station: stationStore.getStation(stationId),
       reading: stationStore.getReading(stationId, readingId)
     };
@@ -17,10 +17,10 @@ const reading = {
   },
 
   update(request, response) {
-    const playlistId = request.params.id;
-    const songId = request.params.songid;
-    const song = playlistStore.getSong(playlistId, songId)
-    const newSong = {
+    const stationId = request.params.id;
+    const readingId = request.params.readingid;
+    const reading = stationStore.getReading(stationId, readingId)
+    const newReading = {
       title: request.body.title,
       artist: request.body.artist,
       duration: Number(request.body.duration)
