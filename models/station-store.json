@@ -1,9 +1,9 @@
 {
-  "playlistCollection": [
+  "stationCollection": [
     {
       "id": "01",
       "name": "Tramore",
-      "userid": "123",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "readings": [
         {
           "id": "02",
@@ -53,23 +53,6 @@
           "windDirection": "102"
         }
       ]
-    }
-  ],
-  "stationCollection": [
-    {
-      "id": "948a0fe0-feaf-11eb-8d39-633fcc3e0592",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "title": "Tramore",
-      "readings": [
-        {
-          "id": "9eb8b890-feaf-11eb-8d39-633fcc3e0592",
-          "code": "123",
-          "windSpeed": "123",
-          "pressure": "123",
-          "windDirection": "123"
-        }
-      ],
-      "pressure": "0123"
     }
   ]
 }
