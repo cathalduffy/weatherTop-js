@@ -59,7 +59,7 @@ const stationStore = {
 
   getReading(id, readingId) {
     const station = this.store.findOneBy(this.collection, { id: id });
-    const readings = station.readings.filter(song => readings.id == readingId);
+    const readings = station.readings.filter(reading => readings.id == readingId);
     return readings[0];
   },
 
