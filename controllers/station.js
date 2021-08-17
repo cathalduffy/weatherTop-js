@@ -3,7 +3,7 @@
 const logger = require("../utils/logger");
 const stationStore = require("../models/station-store");
 const uuid = require("uuid");
-
+//https://api.openweathermap.org/data/2.5/weather?lat=52.1614&lon=7.1493&appid=5fec940145740f91962fcb787072f7c4
 const station = {
   index(request, response) {
     const stationId = request.params.id;
