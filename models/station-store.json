@@ -28,8 +28,16 @@
           "windSpeed": "1",
           "pressure": "1005",
           "windDirection": "101"
+        },
+        {
+          "id": "d7490e00-ff39-11eb-831d-59f37b63eda3",
+          "code": "123",
+          "windSpeed": "123",
+          "pressure": "123",
+          "windDirection": "123"
         }
-      ]
+      ],
+      "pressure": "0100210041005123"
     },
     {
       "id": "02",
