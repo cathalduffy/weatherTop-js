@@ -11,6 +11,10 @@ const station = {
     
     const viewData = {
       title: "Station",
+      weather: {
+        temp: 30,
+        pressure: "40 bar",
+      },
       station: stationStore.getStation(stationId)
     };
     response.render("station", viewData);
