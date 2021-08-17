@@ -1,6 +1,42 @@
 {{> menu}}
 
 <section class="ui center aligned middle aligned segment">
+  <section class="ui segment">
+    
+    <div class="ui five red inverted cards">
+
+    <div class="card">
+        <div class="extra">
+            <h2 class=header">{{station.name}}</h2>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="extra">
+            <h2 class=header">Weather</h2>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="extra">
+            <h2 class=header">Temp</h2>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="extra">
+            <h2 class=header">Wind</h2>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="extra">
+            <h2 class=header">Pressure</h2>
+            <h4> Shortest song: {{latestPressure.name}}</h4>
+        </div>
+    </div>
+</div>
+    
   <h2 class="ui header">
     {{station.name}}
   </h2>
