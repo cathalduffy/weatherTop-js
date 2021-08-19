@@ -9,6 +9,7 @@ const stationAnalytics = {
     if (station.readings.length > 0) {
       latestReading = station.readings[station.readings.length - 1];
     }
+    
     station.code = latestReading.code;
     station.windBft = stationAnalytics.beafourt(latestReading.windSpeed);
     station.tempF = stationAnalytics.tempF(latestReading.temperature);
@@ -20,6 +21,7 @@ const stationAnalytics = {
     station.maxTemperature = stationAnalytics.maxTemperature(latestReading.temperature)
 
     return latestReading;
+    
     // station.tempC = latestReading.temperature;
     // station.tempF = stationAnalytics.tempF(latestReading.temperature);
     // station.maxTemp = stationAnalytics.maxTemp(station.readings);
@@ -37,7 +39,7 @@ const stationAnalytics = {
     // station.minPressure = stationAnalytics.minPressure(station.readings);
     // station.pressureTrend = stationAnalytics.pressureTrend(station.readings);
   },
-  
+    
   
 
 codeToString(code) {
@@ -169,11 +171,7 @@ codeToString(code) {
     return 13.12 + 0.6215 * temp -  11.37 * (Math.pow(windspeed, 0.16)) + 0.3965 * temp * (Math.pow(windspeed, 0.16));
   },
   
-  maxTemperature(readings) {
-    values[] = new [readings.length];
-    for (int i=0; i<readings.length; i++) values[i] = readings.get(i).temperature;
-    return max(values);
-  }
+
 
 
 /* 
