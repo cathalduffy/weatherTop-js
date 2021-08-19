@@ -94,7 +94,7 @@ codeToString(code) {
     return (tempC * 1.8) + 32;
   },
   
-  beafourt(windDirection) {
+  beafourt(windspeed) {
     if (windspeed == 0) {
       return 0;
     } else if (windspeed >= 1 && windspeed <= 6) {
@@ -161,6 +161,8 @@ codeToString(code) {
       return "North";
     }
   },
+  
+  
   windChill(temp, windspeed) {
     return 13.12 + 0.6215 * temp -  11.37 * (Math.pow(windspeed, 0.16)) + 0.3965 * temp * (Math.pow(windspeed, 0.16));
   },
