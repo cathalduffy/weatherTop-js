@@ -16,12 +16,14 @@ const station = {
     const latestReading = stationAnalytics.getLatestReading(station);
     console.log(latestReading);
     const minTemp = stationAnalytics.getMinTemp(station);
+    const maxTemp = stationAnalytics.getMaxTemp(station);
     
     
     const viewData = {
       title: "Station",
       station: stationStore.getStation(stationId),
       latestReading: latestReading,
+      maxTemp: minTemp,
       minTemp: minTemp,
     };
     response.render("station", viewData);
