@@ -18,7 +18,7 @@ const stationAnalytics = {
     station.tempC = latestReading.temperature
     station.windCompass = stationAnalytics.windCompass(latestReading.windDirection);
     station.windChill = stationAnalytics.windChill(latestReading.temperature, latestReading.windSpeed);
-    station.maxTemperature = stationAnalytics.maxTemperature(latestReading.temperature)
+    
 
     return latestReading;
     

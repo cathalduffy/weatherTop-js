@@ -3,40 +3,43 @@
         <div class="card">
     <span class="content centre">
     <h2> {{station.name}}<i class="large location arrow icon" style="color:	#7FFF00"></i></h2>
-
     </span>
         </div>
+      
         <div class="card">
     <span class="content centre">
     <h2>Weather <i class="large {{../station.weatherIcon}}" style="color:#FF69B4"></i></h2>
     <br>{{station.weather}}
     </span>
         </div>
+      
         <div class="card">
     <span class="content centre">
       <h2>Temp <i class="large temperature low icon" style="color:#87ceeb"></i></h2>
-      <br>{{station.tempC}} C</br>
-      <br>{{station.tempF}} F</br>
-
+      <br>{{station.tempC}} C
+      <br>{{station.tempF}} F
+      <br>Max: 
+      <br>Min: 
     </span>
         </div>
+
         <div class="card">
     <span class="content centre">
       <h2>Wind <i class=" large wind icon" style="color:#0000ff"></i></h2>
-      <br>{{station.windBft}} bft</br>
-      <br>{{station.degreesToCompass}}</br>
-      <br>Feels like {{station.windChill}}</br>
-      <br>Max: {{station.windChill}}</br>
-      <br>Min: {{station.windChill}}</br>
-
-
+      <br>{{station.windBft}} bft
+      <br>{{station.windCompass}}
+      <br>Feels like {{station.windChill}}
+      <br>Max: 
+      <br>Min: 
     </span>
         </div>
+
         <div class="card">
     <span class="content centre">
       <h2>Pressure <i class="large compass arrows icon" style="color:#a55a55"></i></h2>
-      <br>{{station.pressure}} hpa</br>
-
+      <br>{{station.pressure}} hpa
+      <br>Max: 
+      <br>Min: 
     </span>
         </div>
     </div>
