@@ -182,6 +182,7 @@ codeToString(code) {
       }
     }
     return minTemp;
+    console.log(minTemp)
   }
 
   
