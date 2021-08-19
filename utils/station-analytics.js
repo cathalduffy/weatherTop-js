@@ -17,6 +17,7 @@ const stationAnalytics = {
     station.tempC = latestReading.temperature
     station.windCompass = stationAnalytics.windCompass(latestReading.windDirection);
     station.windChill = stationAnalytics.windChill(latestReading.temperature, latestReading.windSpeed);
+    station.maxTemperature = stationAnalytics.maxTemperature(latestReading.temperature)
 
     return latestReading;
     // station.tempC = latestReading.temperature;
@@ -167,6 +168,12 @@ codeToString(code) {
   windChill(temp, windspeed) {
     return 13.12 + 0.6215 * temp -  11.37 * (Math.pow(windspeed, 0.16)) + 0.3965 * temp * (Math.pow(windspeed, 0.16));
   },
+  
+  maxTemperature(readings) {
+    values[] = new [readings.length];
+    for (int i=0; i<readings.length; i++) values[i] = readings.get(i).temperature;
+    return max(values);
+  }
 
 
 /* 
