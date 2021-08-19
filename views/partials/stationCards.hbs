@@ -2,22 +2,22 @@
     <div class="ui five stackable inverted cards">
         <div class="card">
     <span class="content centre">
-    <h2> {{station.name}}<i class="large location arrow icon" style="color:	#7FFF00"></i></h2>
+    <h2> {{station.name}}<i class="right floated large purple location arrow icon"></i></h2>
     </span>
         </div>
       
         <div class="card">
     <span class="content centre">
-    <h2>Weather <i class="large {{../station.weatherIcon}}" style="color:#FF69B4"></i></h2>
+    <h2>Weather <i class="right floated large red {{../station.weatherIcon}}"></i></h2>
     <br>{{station.weather}}
     </span>
         </div>
       
         <div class="card">
     <span class="content centre">
-      <h2>Temp <i class="large temperature low icon" style="color:#87ceeb"></i></h2>
-      <br>{{station.tempC}} C
-      <br>{{station.tempF}} F
+      <h2>Temp <i class="right floated large blue temperature low icon"></i></h2>
+      <br>{{station.tempC}} C°
+      <br>{{station.tempF}} F°
       <br>Max: {{maxTemp.temperature}}
       <br>Min: {{minTemp.temperature}}
     </span>
@@ -25,7 +25,7 @@
 
         <div class="card">
     <span class="content centre">
-      <h2>Wind <i class=" large wind icon" style="color:#0000ff"></i></h2>
+      <h2>Wind <i class="right floated large green wind icon"></i></h2>
       <br>{{station.windBft}} bft
       <br>{{station.windCompass}}
       <br>Feels like {{station.windChill}}
@@ -36,7 +36,7 @@
 
         <div class="card">
     <span class="content centre">
-      <h2>Pressure <i class="large compass arrows icon" style="color:#a55a55"></i></h2>
+      <h2>Pressure <i class="right floated large orange snowflake icon"></i></h2>
       <br>{{station.pressure}} hpa
       <br>Max: {{maxPressure.pressure}}
       <br>Min: {{minPressure.pressure}}
