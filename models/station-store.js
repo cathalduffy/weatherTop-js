@@ -2,6 +2,7 @@
 
 const _ = require("lodash");
 const JsonStore = require("./json-store");
+const stationAnalytics = require("../utils/station-analytics")
 
 const stationStore = {
   store: new JsonStore("./models/station-store.json", {
@@ -71,7 +72,21 @@ const stationStore = {
     reading.pressure = updatedReading.pressure;
     reading.windDirection = updatedReading.windDirection;
     this.store.save();
-  }
+  },
+   
+  Station(name,latitude,longitude)
+  {
+    this.name = name;
+    this.latitude = latitude;
+    this.longitude = longitude;
+  },
+  
+  weatherIcon() {
+    return stationAnalytics.weatherIcon(this.code);
+  },
+
 };
+
+  
 
 module.exports = stationStore;
