@@ -171,13 +171,13 @@ codeToString(code) {
     return 13.12 + 0.6215 * temp -  11.37 * (Math.pow(windspeed, 0.16)) + 0.3965 * temp * (Math.pow(windspeed, 0.16));
   },
   
-  getMaxTemp(stations) {
+  getMaxTemp(station) {
     let maxTemp = null;
-    if (stations.readings.length > 0) {
-      maxTemp = stations.readings[0];
-      for (let i = 1; i < stations.readings.length; i++) {
-        if (stations.readings[i].temperature > maxTemp.temperature) {
-          maxTemp = stations.readings[i];
+    if (station.readings.length > 0) {
+      maxTemp = station.readings[0];
+      for (let i = 1; i < station.readings.length; i++) {
+        if (station.readings[i].temperature > maxTemp.temperature) {
+          maxTemp = station.readings[i];
         }
       }
     }
@@ -196,6 +196,60 @@ codeToString(code) {
     }
     return minTemp;
   },
+  
+  getMaxWindSpeed(station) {
+    let maxWindSpeed = null;
+    if (station.readings.length > 0) {
+      maxWindSpeed = station.readings[0];
+      for (let i = 1; i < station.readings.length; i++) {
+        if (station.readings[i].windSpeed > maxWindSpeed.windSpeed) {
+          maxWindSpeed = station.readings[i];
+        }
+      }
+    }
+    return maxWindSpeed;
+  },
+  
+  getMinWindSpeed(station) {
+    let minWindSpeed = null;
+    if (station.readings.length > 0) {
+      minWindSpeed = station.readings[0];
+      for (let i = 1; i < station.readings.length; i++) {
+        if (station.readings[i].windSpeed < minWindSpeed.windSpeed) {
+          minWindSpeed = station.readings[i];
+        }
+      }
+    }
+    return minWindSpeed;
+  },
+  
+  getMaxPressure(station) {
+    let maxPressure = null;
+    if (station.readings.length > 0) {
+      maxPressure = station.readings[0];
+      for (let i = 1; i < station.readings.length; i++) {
+        if (station.readings[i].pressure > maxPressure.pressure) {
+          maxWindSpeed = station.readings[i];
+        }
+      }
+    }
+    return maxWindSpeed;
+  },
+  
+  getMinWindSpeed(station) {
+    let minWindSpeed = null;
+    if (station.readings.length > 0) {
+      minWindSpeed = station.readings[0];
+      for (let i = 1; i < station.readings.length; i++) {
+        if (station.readings[i].windSpeed < minWindSpeed.windSpeed) {
+          minWindSpeed = station.readings[i];
+        }
+      }
+    }
+    return minWindSpeed;
+  },
+  
+  
 
   
 
