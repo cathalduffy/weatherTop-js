@@ -229,24 +229,24 @@ codeToString(code) {
       maxPressure = station.readings[0];
       for (let i = 1; i < station.readings.length; i++) {
         if (station.readings[i].pressure > maxPressure.pressure) {
-          maxWindSpeed = station.readings[i];
+          maxPressure = station.readings[i];
         }
       }
     }
-    return maxWindSpeed;
+    return maxPressure;
   },
   
-  getMinWindSpeed(station) {
-    let minWindSpeed = null;
+  getMinPressure(station) {
+    let minPressure = null;
     if (station.readings.length > 0) {
-      minWindSpeed = station.readings[0];
+      minPressure = station.readings[0];
       for (let i = 1; i < station.readings.length; i++) {
-        if (station.readings[i].windSpeed < minWindSpeed.windSpeed) {
-          minWindSpeed = station.readings[i];
+        if (station.readings[i].pressure < minPressure.pressure) {
+          minPressure = station.readings[i];
         }
       }
     }
-    return minWindSpeed;
+    return minPressure;
   },
   
   
