@@ -22,7 +22,7 @@ const reading = {
     const reading = stationStore.getReading(stationId, readingId)
     const newReading = {
       code: request.body.code,
-      temperature: request.body.artist,
+      temperature: request.body.temperature,
       windSpeed: request.body.windSpeed,
       pressure: request.body.pressure,
       windDirection: request.body.windDirection,

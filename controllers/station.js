@@ -11,6 +11,8 @@ const station = {
   index(request, response) {
     const stationId = request.params.id;
     logger.debug("Station id = ", stationId);
+    
+    const station = stationStore.getStation(stationId);
     const latestReading = stationAnalytics.getLatestReading(station);
     console.log(latestReading);
     
