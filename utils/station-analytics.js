@@ -15,6 +15,7 @@ const stationAnalytics = {
     station.weather = stationAnalytics.codeToString(Number(latestReading.code));
     station.pressure = latestReading.pressure;
     station.tempC = latestReading.temperature
+    station.degreesToCompass = stationAnalytics.degreesToCompass(latestReading.windDirection);
 
     return latestReading;
     // station.tempC = latestReading.temperature;
@@ -93,7 +94,7 @@ codeToString(code) {
     return (tempC * 1.8) + 32;
   },
   
-  beafourt(windspeed) {
+  beafourt(windDirection) {
     if (windspeed == 0) {
       return 0;
     } else if (windspeed >= 1 && windspeed <= 6) {
