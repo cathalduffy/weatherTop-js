@@ -1,7 +1,7 @@
 {
-  "name": "playlist-4",
+  "name": "station",
   "version": "0.0.1",
-  "description": "Playist 4 Features",
+  "description": "Weather Station Features",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -19,7 +19,7 @@
     "winston": "^3.3.3"
   },
   "repository": {
-    "url": "https://github.com/wit-hdip-comp-sci-2021/playlist-4"
+    "url": "https://github.com/wit-hdip-comp-sci-2021/weatherStation"
   },
   "license": "MIT",
   "keywords": [
