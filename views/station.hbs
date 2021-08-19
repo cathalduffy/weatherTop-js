@@ -1,45 +1,11 @@
 {{> menu}}
 
-<section class="ui center aligned middle aligned segment">
-  <section class="ui segment">
-    
-    <div class="ui five red inverted cards">
-
-    <div class="card">
-        <div class="extra">
-            <h2 class=header">{{station.name}}</h2>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="extra">
-            <h2 class=header">{{weather.temp}}</h2>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="extra">
-            <h2 class=header">Temp</h2>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="extra">
-            <h2 class=header">Wind</h2>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="extra">
-            <h2 class=header">Pressure</h2>
-            <h2 class=header">{{weather.pressure}}</h2>
-        </div>
-    </div>
-</div>
-    
-  <h2 class="ui header">
-    {{station.name}}
+<section class="ui segment">
+  <h2 class="ui huge header aligned violet header">
+    {{station.title}}
   </h2>
-  {{> listreadings}}
-  {{> addreading}}
+
+    {{> stationCards}}
+    {{> listreadings}}
+    {{> addreading}}
 </section>

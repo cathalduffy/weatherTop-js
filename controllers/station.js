@@ -3,19 +3,21 @@
 const logger = require("../utils/logger");
 const stationStore = require("../models/station-store");
 const uuid = require("uuid");
+const stationAnalytics = require('../utils/station-analytics');
+
 //https://api.openweathermap.org/data/2.5/weather?lat=52.1614&lon=7.1493&appid=5fec940145740f91962fcb787072f7c4
+
 const station = {
   index(request, response) {
     const stationId = request.params.id;
     logger.debug("Station id = ", stationId);
+    const latestReading = stationAnalytics.getLatestReading(station);
+    console.log(latestReading);
     
     const viewData = {
       title: "Station",
-      weather: {
-        temp: 30,
-        pressure: "40 bar",
-      },
-      station: stationStore.getStation(stationId)
+      station: stationStore.getStation(stationId),
+      latestReading: latestReading,
     };
     response.render("station", viewData);
   },
