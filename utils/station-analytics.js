@@ -15,7 +15,8 @@ const stationAnalytics = {
     station.weather = stationAnalytics.codeToString(Number(latestReading.code));
     station.pressure = latestReading.pressure;
     station.tempC = latestReading.temperature
-    station.degreesToCompass = stationAnalytics.degreesToCompass(latestReading.windDirection);
+    station.windCompass = stationAnalytics.windCompass(latestReading.windDirection);
+    station.windChill = stationAnalytics.windChill(latestReading.temperature, latestReading.windSpeed);
 
     return latestReading;
     // station.tempC = latestReading.temperature;
@@ -125,7 +126,7 @@ codeToString(code) {
     return -1;
   },
 
-  degreesToCompass(deg) 
+  windCompass(deg) 
   {
     if (deg > 11.25 && deg <= 33.75) {
       return "North North East";
