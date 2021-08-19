@@ -171,6 +171,20 @@ codeToString(code) {
     return 13.12 + 0.6215 * temp -  11.37 * (Math.pow(windspeed, 0.16)) + 0.3965 * temp * (Math.pow(windspeed, 0.16));
   },
   
+  getMinTemp(station) {
+    let minTemp = null;
+    if (station.readings.length > 0) {
+      minTemp = station.readings[0];
+      for (let i = 1; i < station.readings.length; i++) {
+        if (station.readings[i].temperature < minTemp.temperature) {
+          minTemp = station.readings[i];
+        }
+      }
+    }
+    return minTemp;
+  }
+
+  
 
 
 
