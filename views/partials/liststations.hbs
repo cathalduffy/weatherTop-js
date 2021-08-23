@@ -3,11 +3,12 @@
     <h2 class="ui header">
       {{name}}
     </h2>
+    {{> stationCards station=this}}
     <a href="/station/{{id}}" class="ui icon button">
-      <i class="icon folder open"></i>
+      <i class="blue icon folder open"></i>
     </a>
     <a href="/dashboard/deletestation/{{id}}" class="ui icon button">
-      <i class="icon trash"></i>
+      <i class="red icon trash"></i>
     </a>
   </section>
 {{/each}}
