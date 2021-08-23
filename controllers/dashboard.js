@@ -10,6 +10,8 @@ const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
     const loggedInUser = accounts.getCurrentUser(request);
+    const stationId = request.params.id;
+    logger.debug("Station id = ", stationId);
     
     const station = stationStore.getStation(stationId);
     const latestReading = stationAnalytics.getLatestReading(station);
@@ -20,6 +22,7 @@ const dashboard = {
     const maxWindSpeed = stationAnalytics.getMaxWindSpeed(station);
     const minPressure = stationAnalytics.getMinPressure(station);
     const maxPressure = stationAnalytics.getMaxPressure(station);
+    
     
     const viewData = {
       title: "Station Dashboard",
