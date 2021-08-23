@@ -17,7 +17,7 @@ const stationAnalytics = {
     station.pressure = latestReading.pressure;
     station.tempC = latestReading.temperature
     station.windCompass = stationAnalytics.windCompass(latestReading.windDirection);
-    station.windChill = stationAnalytics.windChill(latestReading.temperature, latestReading.windSpeed);
+    station.windChill = stationAnalytics.windChill(latestReading.temperature, latestReading.windSpeed).toFixed(2);
     
 
     return latestReading;
