@@ -12,10 +12,29 @@ const dashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     const stationId = request.params.id;
     logger.debug("Station id = ", stationId);
+    
+    
+    const station = stationStore.getStation(stationId);
+    const latestReading = stationAnalytics.getLatestReading(station);
+    console.log(latestReading);
+    const minTemp = stationAnalytics.getMinTemp(station);
+    const maxTemp = stationAnalytics.getMaxTemp(station);
+    const minWindSpeed = stationAnalytics.getMinWindSpeed(station);
+    const maxWindSpeed = stationAnalytics.getMaxWindSpeed(station);
+    const minPressure = stationAnalytics.getMinPressure(station);
+    const maxPressure = stationAnalytics.getMaxPressure(station);
 
     const viewData = {
       title: "Station Dashboard",
       stations: stationStore.getUserStations(loggedInUser.id),
+      latestReading: latestReading,
+      maxTemp: maxTemp,
+      minTemp: minTemp,
+      maxWindSpeed: maxWindSpeed,
+      minWindSpeed: minWindSpeed,
+      maxPressure: maxPressure,
+      minPressure: minPressure,
+      
     };
     logger.info("about to render", stationStore.getAllStations());
     response.render("dashboard", viewData);
