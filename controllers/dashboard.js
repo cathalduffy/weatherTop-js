@@ -15,7 +15,7 @@ const dashboard = {
       
     const station = stationStore.getStation(stationId);
 
-    const minTemp = stationAnalytics.getMinTemp(station);
+    const minTemp = stationStore.stationCollection.forEach(stationAnalytics.getMinTemp(station));
     
 
     const viewData = {
