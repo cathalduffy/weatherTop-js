@@ -14,12 +14,10 @@ const dashboard = {
     logger.debug("Station id = ", stationId);
       
     const station = stationStore.getStation(stationId);
-    
 
     const viewData = {
       title: "Station Dashboard",
       stations: stationStore.getUserStations(loggedInUser.id),
-
   
     };
     logger.info("about to render", stationStore.getAllStations());
