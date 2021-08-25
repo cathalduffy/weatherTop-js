@@ -21,7 +21,7 @@ const dashboard = {
     const viewData = {
       title: "Station Dashboard",
       stations: stationStore.getUserStations(loggedInUser.id),
-      minTemp: minTemp,
+      minTemp: stationStore.stationCollection.forEach(minTemp),
   
     };
     logger.info("about to render", stationStore.getAllStations());
