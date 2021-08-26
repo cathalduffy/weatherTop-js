@@ -24,15 +24,15 @@
           "windDirection": "96"
         }
       ],
-      "code": "500",
+      "code": "600",
       "windBft": 1,
-      "tempF": 39.2,
-      "weather": "Heavy Showers",
-      "pressure": "1003",
+      "tempF": 42.8,
+      "weather": "Rain",
+      "pressure": "1004",
       "degreesToCompass": "East South East",
-      "windChill": "3.94",
+      "windChill": "6.80",
       "windCompass": "East South East",
-      "tempC": "4"
+      "tempC": "6"
     },
     {
       "id": "02",
@@ -65,7 +65,8 @@
       "pressure": "1000",
       "tempC": "0.5",
       "degreesToCompass": "East South East",
-      "windChill": -0.22048980101855173
+      "windChill": "-0.22",
+      "windCompass": "East South East"
     }
   ]
 }
