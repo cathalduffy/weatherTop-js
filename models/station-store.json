@@ -65,6 +65,12 @@
       "tempC": "0.5",
       "degreesToCompass": "East South East",
       "windChill": -0.22048980101855173
+    },
+    {
+      "id": "13d42610-067a-11ec-9c46-bb77a94545ed",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "title": "Dungarvan",
+      "readings": []
     }
   ]
 }

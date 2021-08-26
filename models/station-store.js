@@ -84,10 +84,6 @@ const stationStore = {
   weatherIcon() {
     return stationAnalytics.weatherIcon(this.code);
   },
-  
-  stationLoop(station){
-    this.forEach.store(station);
-  }
 
 };
 

@@ -45,7 +45,6 @@ const stationAnalytics = {
   
 
 codeToString(code) {
-
         switch (code) {
             case 100:
                 return "Clear";
@@ -78,7 +77,6 @@ codeToString(code) {
       },
 
     weatherIcon(code) {
-
         let weatherIcons = new Map();
         weatherIcons.put(100, "sun icon");
         weatherIcons.put(200, "cloud sun icon");
@@ -168,7 +166,6 @@ codeToString(code) {
     }
   },
   
-  
   windChill(temp, windspeed) {
     return 13.12 + 0.6215 * temp -  11.37 * (Math.pow(windspeed, 0.16)) + 0.3965 * temp * (Math.pow(windspeed, 0.16));
   },
@@ -251,11 +248,6 @@ codeToString(code) {
     return minPressure;
   },
   
-  
-
-  
-
-
 /* 
 
   
