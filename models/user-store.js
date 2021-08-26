@@ -24,7 +24,7 @@ const userStore = {
     return this.store.findOneBy(this.collection, { email: email });
   },
      
-getUserByPassword(password) {
+  getUserByPassword(password) {
     return this.store.findOneBy(this.collection, { password: password });
   },
 }

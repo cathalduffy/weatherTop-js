@@ -41,13 +41,6 @@ const stationStore = {
   addReading(id, reading) {
     const station = this.getStation(id);
     station.readings.push(reading);
-
-    let pressure = 0;
-    for (let i = 0; i < station.readings.length; i++) {
-      pressure += station.readings[i].pressure;
-    }
-
-    station.pressure = pressure;
     this.store.save();
   },
 

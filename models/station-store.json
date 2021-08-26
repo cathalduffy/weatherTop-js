@@ -24,14 +24,15 @@
           "windDirection": "96"
         }
       ],
-      "code": "700",
+      "code": "500",
       "windBft": 1,
-      "tempF": 46.4,
-      "weather": "Snow",
-      "pressure": "1005",
-      "tempC": "8",
+      "tempF": 39.2,
+      "weather": "Heavy Showers",
+      "pressure": "1003",
       "degreesToCompass": "East South East",
-      "windChill": 9.894
+      "windChill": "3.94",
+      "windCompass": "East South East",
+      "tempC": "4"
     },
     {
       "id": "02",
@@ -65,12 +66,6 @@
       "tempC": "0.5",
       "degreesToCompass": "East South East",
       "windChill": -0.22048980101855173
-    },
-    {
-      "id": "13d42610-067a-11ec-9c46-bb77a94545ed",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "title": "Dungarvan",
-      "readings": []
     }
   ]
 }
