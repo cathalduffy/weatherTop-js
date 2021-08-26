@@ -15,11 +15,14 @@ const dashboard = {
       
     const station = stationStore.getStation(stationId);
     
-    const sort = sort(stationStore.readings);
+    const minTemp = stationStore.readings.forEach(stationAnalytics.getMinTemp(station));
 
     const viewData = {
       title: "Station Dashboard",
       stations: stationStore.getUserStations(loggedInUser.id),
+      readings: [],
+      minTemp: minTemp,
+      
     };
     logger.info("about to render", stationStore.getAllStations());
     response.render("dashboard", viewData);
