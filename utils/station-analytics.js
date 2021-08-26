@@ -40,15 +40,6 @@ const stationAnalytics = {
     // station.pressureTrend = stationAnalytics.pressureTrend(station.readings);
   },
   
-getReadings(station){
-  let newReading = null;
-    if (station.readings.length >= 1){
-      newReading = station.readings; 
-    }
-  station.minTemp = stationAnalytics.getMinTemp(station.readings);
-  
-    return newReading;
-  },
     
   
 
