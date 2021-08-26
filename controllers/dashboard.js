@@ -14,6 +14,8 @@ const dashboard = {
     logger.debug("Station id = ", stationId);
       
     const station = stationStore.getStation(stationId);
+    
+    const sort = sort(stationStore.readings);
 
     const viewData = {
       title: "Station Dashboard",
