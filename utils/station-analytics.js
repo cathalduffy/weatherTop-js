@@ -40,9 +40,9 @@ const stationAnalytics = {
     // station.pressureTrend = stationAnalytics.pressureTrend(station.readings);
   },
   
-  getReadings(station){
+getReadings(station){
     if (station.readings.length >= 1){
-      station.readings = station.readings[station.readings.length-1].readings; 
+      stationReadings = station.readings; 
     }
     return station.readings;
   },
