@@ -14,13 +14,13 @@ const dashboard = {
     logger.debug("Station id = ", stationId);
       
     const station = stationStore.getStation(stationId);
+    const stationArray = 
     
     const minTemp = stationStore.readings.forEach(stationAnalytics.getMinTemp(station));
 
     const viewData = {
       title: "Station Dashboard",
       stations: stationStore.getUserStations(loggedInUser.id),
-      readings: [],
       minTemp: minTemp,
       
     };
