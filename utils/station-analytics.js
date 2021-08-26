@@ -39,6 +39,13 @@ const stationAnalytics = {
     // station.minPressure = stationAnalytics.minPressure(station.readings);
     // station.pressureTrend = stationAnalytics.pressureTrend(station.readings);
   },
+  
+  getReadings(station){
+    if (station.readings.length >= 1){
+      station.readings = station.readings[station.readings.length-1].readings; 
+    }
+    return station.readings;
+  },
     
   
 
