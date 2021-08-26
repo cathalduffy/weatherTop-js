@@ -41,10 +41,13 @@ const stationAnalytics = {
   },
   
 getReadings(station){
+  let newReading = null;
     if (station.readings.length >= 1){
-      stationReadings = station.readings; 
+      newReading = station.readings; 
     }
-    return station.readings;
+  station.minTemp = stationAnalytics.getMinTemp(station.readings);
+  
+    return newReading;
   },
     
   
