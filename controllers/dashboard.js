@@ -14,9 +14,9 @@ const dashboard = {
     logger.debug("Station id = ", stationId);
       
     const station = stationStore.getStation(stationId);
-    const stationArray = 
+    const stationArray = stationStore.stationCollection;
     
-    const minTemp = stationStore.readings.forEach(stationAnalytics.getMinTemp(station));
+    const minTemp = stationArray.forEach(stationAnalytics.getMinTemp(station) => {return station});
 
     const viewData = {
       title: "Station Dashboard",
