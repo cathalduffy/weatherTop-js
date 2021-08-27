@@ -16,7 +16,7 @@ const dashboard = {
     
     const stations = stationStore.getUserStations(loggedInUser.id);
       for (let station in stations) {
-        station.maxTemp = stationAnalytics.getMaxTemp(stations.readings);
+        station.maxTemp = stationAnalytics.getMaxTemp();
     }
     
    
