@@ -8,8 +8,7 @@ const stationAnalytics = {
     let weatherIcon = null;
     if (station.readings.length > 0) {
       latestReading = station.readings[station.readings.length - 1];
-    }
-    
+    }    
     station.code = latestReading.code;
     station.windBft = stationAnalytics.beafourt(latestReading.windSpeed);
     station.tempF = stationAnalytics.tempF(latestReading.temperature);
@@ -19,26 +18,10 @@ const stationAnalytics = {
     station.windCompass = stationAnalytics.windCompass(latestReading.windDirection);
     station.windChill = stationAnalytics.windChill(latestReading.temperature, latestReading.windSpeed).toFixed(2);
     
-
     return latestReading;
-    
-    // station.tempC = latestReading.temperature;
-    // station.tempF = stationAnalytics.tempF(latestReading.temperature);
-    // station.maxTemp = stationAnalytics.maxTemp(station.readings);
-    // station.minTemp = stationAnalytics.minTemp(station.readings);
-    // station.tempTrend = stationAnalytics.tempTrend(station.readings);
-    //
-    // station.maxWind = stationAnalytics.maxWind(station.readings);
-    // station.minWind = stationAnalytics.minWind(station.readings);
-    // station.windTrend = stationAnalytics.windTrend(station.readings);
-    // String.format("%1.2f", stationAnalytics.windChill(latestReading.temperature, latestReading.windSpeed));
-    // station.windChill = Double.valueOf(str);
-    // station.windCompass = stationAnalytics.degreesToCompass(latestReading.windDirection);
-    //
-    // station.maxPressure = stationAnalytics.maxPressure(station.readings);
-    // station.minPressure = stationAnalytics.minPressure(station.readings);
-    // station.pressureTrend = stationAnalytics.pressureTrend(station.readings);
   },
+  
+  
   
 
     
@@ -249,7 +232,24 @@ codeToString(code) {
   },
   
 /* 
-
+      
+    // station.tempC = latestReading.temperature;
+    // station.tempF = stationAnalytics.tempF(latestReading.temperature);
+    // station.maxTemp = stationAnalytics.maxTemp(station.readings);
+    // station.minTemp = stationAnalytics.minTemp(station.readings);
+    // station.tempTrend = stationAnalytics.tempTrend(station.readings);
+    //
+    // station.maxWind = stationAnalytics.maxWind(station.readings);
+    // station.minWind = stationAnalytics.minWind(station.readings);
+    // station.windTrend = stationAnalytics.windTrend(station.readings);
+    // String.format("%1.2f", stationAnalytics.windChill(latestReading.temperature, latestReading.windSpeed));
+    // station.windChill = Double.valueOf(str);
+    // station.windCompass = stationAnalytics.degreesToCompass(latestReading.windDirection);
+    //
+    // station.maxPressure = stationAnalytics.maxPressure(station.readings);
+    // station.minPressure = stationAnalytics.minPressure(station.readings);
+    // station.pressureTrend = stationAnalytics.pressureTrend(station.readings);
+  
   
   public static double max(double values[]) {
     double max = values[0];
