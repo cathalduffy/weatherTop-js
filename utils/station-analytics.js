@@ -21,7 +21,6 @@ const stationAnalytics = {
     return latestReading;
   },
 
-  
 
  
 
