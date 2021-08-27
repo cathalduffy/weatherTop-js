@@ -12,21 +12,12 @@ const dashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     const stationId = request.params.id;
     logger.debug("Station id = ", stationId);
-      
-    const station = stationStore.getStation(stationId);
     
     const stations = stationStore.getUserStations(loggedInUser.id);
-      for (let station in stations) {
-      station.temperature = stationAnalytics.getMinTemp(station);
-      }
-    
-    const minTemp = stationAnalytics.getMinTemp(station);
-
-    
+   
     const viewData = {
       title: "Station Dashboard",
-      stations: stationStore.getUserStations(loggedInUser.id),
-      minTemp: minTemp,
+      stations: stations,
     };
     logger.info("about to render", stationStore.getAllStations());
     response.render("dashboard", viewData);
