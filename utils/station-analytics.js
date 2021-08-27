@@ -24,7 +24,7 @@ const stationAnalytics = {
 
  
 
-codeToString(code) {
+  codeToString(code) {
         switch (code) {
             case 100:
                 return "Clear";
