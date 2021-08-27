@@ -15,7 +15,9 @@ const dashboard = {
     logger.debug("Station id = ", stationId);
     
     const stations = stationStore.getUserStations(loggedInUser.id);
-
+      for (let station in stations) {
+        station.maxTemp = stationAnalytics.getMaxTemp(stations.readings);
+    }
     
    
     const viewData = {
