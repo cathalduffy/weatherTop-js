@@ -5,6 +5,7 @@ const logger = require("../utils/logger");
 const stationStore = require("../models/station-store");
 const uuid = require("uuid");
 const stationAnalytics = require('../utils/station-analytics');
+const axios = require("axios");
 
 const dashboard = {
   index(request, response) {
@@ -14,9 +15,7 @@ const dashboard = {
     logger.debug("Station id = ", stationId);
     
     const stations = stationStore.getUserStations(loggedInUser.id);
-      for (let station in stations) {
-        station.minTemp = stationAnalytics.getMinTemp(stations);
-      }
+
     
    
     const viewData = {
