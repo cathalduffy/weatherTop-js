@@ -20,12 +20,10 @@ const stationAnalytics = {
     
     return latestReading;
   },
-  
-  
+
   
 
-    
-  
+ 
 
 codeToString(code) {
         switch (code) {

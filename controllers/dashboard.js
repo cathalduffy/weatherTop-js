@@ -15,10 +15,18 @@ const dashboard = {
       
     const station = stationStore.getStation(stationId);
     
+    const stations = stationStore.getUserStations(loggedInUser.id);
+      for (let station in stations) {
+      station.temperature = stationAnalytics.getMinTemp(station);
+      }
+    
+    const minTemp = stationAnalytics.getMinTemp(station);
 
+    
     const viewData = {
       title: "Station Dashboard",
       stations: stationStore.getUserStations(loggedInUser.id),
+      minTemp: minTemp,
     };
     logger.info("about to render", stationStore.getAllStations());
     response.render("dashboard", viewData);
