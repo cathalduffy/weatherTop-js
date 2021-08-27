@@ -67,6 +67,12 @@
       "degreesToCompass": "East South East",
       "windChill": "-0.22",
       "windCompass": "East South East"
+    },
+    {
+      "id": "33009fa0-075b-11ec-a3d6-0dc645f5e37c",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "title": "Clonae",
+      "readings": []
     }
   ]
 }
