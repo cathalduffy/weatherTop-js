@@ -14,10 +14,14 @@ const dashboard = {
     const stationId = request.params.id;
     logger.debug("Station id = ", stationId);
     
+    const station = stationStore.getStation(stationId);
+    
     const stations = stationStore.getUserStations(loggedInUser.id);
       for (let station in stations) {
-        station.maxTemp = stationAnalytics.getMaxTemp();
+        const maxTemp = stationAnalytics.getMaxTemp(station);
     }
+    
+    const maxTemp = stationAnalytics.getMaxTemp(station);
     
    
     const viewData = {

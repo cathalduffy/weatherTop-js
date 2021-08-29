@@ -1,5 +1,7 @@
 {{> menu id="dashboard"}}
 
+{{#each stations}}
+
 <section class="ui segment">
   <h2 class="ui header">
     {{station.name}}
@@ -7,3 +9,5 @@
   {{> liststations}}
   {{> addstation}}
 </section>
+
+{{/each}}
