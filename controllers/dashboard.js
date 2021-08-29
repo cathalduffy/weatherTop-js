@@ -16,6 +16,7 @@ const dashboard = {
        
     const stations = stationStore.getUserStations(loggedInUser.id);
       
+      
     const viewData = {
       title: "Station Dashboard",
       stations: stations,
