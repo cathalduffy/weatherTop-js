@@ -13,14 +13,9 @@ const dashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     const stationId = request.params.id;
     logger.debug("Station id = ", stationId);
-    
-    const station = stationStore.getStation(stationId);
-    
+       
     const stations = stationStore.getUserStations(loggedInUser.id);
-     
-    
-    
-   
+      
     const viewData = {
       title: "Station Dashboard",
       stations: stations,

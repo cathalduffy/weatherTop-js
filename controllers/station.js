@@ -23,6 +23,7 @@ const station = {
     const minPressure = stationAnalytics.getMinPressure(station);
     const maxPressure = stationAnalytics.getMaxPressure(station);
     
+    
     const viewData = {
       title: "Station",
       station: stationStore.getStation(stationId),
