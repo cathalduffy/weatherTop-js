@@ -16,14 +16,23 @@ const station = {
     const latestReading = stationAnalytics.getLatestReading(station);
     console.log(latestReading);
     
-    const stationReading = stationAnalytics.getStationReadings(station);
-    
+    const minTemp = stationAnalytics.getMinTemp(station);
+    const maxTemp = stationAnalytics.getMaxTemp(station);
+    const minWindSpeed = stationAnalytics.getMinWindSpeed(station);
+    const maxWindSpeed = stationAnalytics.getMaxWindSpeed(station);
+    const minPressure = stationAnalytics.getMinPressure(station);
+    const maxPressure = stationAnalytics.getMaxPressure(station);
     
     const viewData = {
       title: "Station",
       station: stationStore.getStation(stationId),
       latestReading: latestReading,
-      stationReading: stationReading,
+      minTemp: minTemp,
+      maxTemp: maxTemp,
+      minWindSpeed: minWindSpeed,
+      maxWindSpeed: maxWindSpeed,
+      minPressure: minPressure,
+      maxPressure: maxPressure,
     };
     response.render("station", viewData);
   },

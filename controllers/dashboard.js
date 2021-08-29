@@ -18,12 +18,7 @@ const dashboard = {
     
     const stations = stationStore.getUserStations(loggedInUser.id);
      
-    const minTemp = stationAnalytics.getMinTemp(station);
-    const maxTemp = stationAnalytics.getMaxTemp(station);
-    const minWindSpeed = stationAnalytics.getMinWindSpeed(station);
-    const maxWindSpeed = stationAnalytics.getMaxWindSpeed(station);
-    const minPressure = stationAnalytics.getMinPressure(station);
-    const maxPressure = stationAnalytics.getMaxPressure(station);
+    
     
    
     const viewData = {
