@@ -15,6 +15,7 @@ const station = {
     const station = stationStore.getStation(stationId);
     const latestReading = stationAnalytics.getLatestReading(station);
     console.log(latestReading);
+    
     const minTemp = stationAnalytics.getMinTemp(station);
     const maxTemp = stationAnalytics.getMaxTemp(station);
     const minWindSpeed = stationAnalytics.getMinWindSpeed(station);

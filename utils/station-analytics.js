@@ -21,6 +21,18 @@ const stationAnalytics = {
     return latestReading;
   },
   
+  getStationReadings(station) {
+    let stationReading = null;
+    
+    station.minTemp = stationAnalytics.getMinTemp(station);
+    station.maxTemp = stationAnalytics.getMaxTemp(station);
+    station.minWindSpeed = stationAnalytics.getMinWindSpeed(station);
+    station.maxWindSpeed = stationAnalytics.getMaxWindSpeed(station);
+    station.minPressure = stationAnalytics.getMinPressure(station);
+    station.maxPressure = stationAnalytics.getMaxPressure(station);
+    
+    retur
+  },
   
   
   
