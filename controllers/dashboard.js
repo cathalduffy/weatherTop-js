@@ -13,13 +13,13 @@ const dashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     const stationId = request.params.id;
     logger.debug("Station id = ", stationId);
-    const allStations = stationStore.getAllStations();
+    const  = stationStore.getAllStations();
     const station = stationStore.getStation(stationId);
     const readingId = request.params.readingid;
        
     const stations = stationStore.getUserStations(loggedInUser.id);
     
-    for (let i=0; i<allStations.length; i++) {
+    for (let i=0; i< stationStore.getAllStations().length; i++) {
       const station = allStations[i];
       station.maxTemp = stationAnalytics.getMaxTemp(station);
       station.minTemp = stationAnalytics.getMinTemp(station);
