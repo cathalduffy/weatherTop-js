@@ -13,8 +13,21 @@ const dashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     const stationId = request.params.id;
     logger.debug("Station id = ", stationId);
+    const allStations = stationStore.getAllStations();
+    const station = stationStore.getStation(stationId);
+    const readingId = request.params.readingid;
        
     const stations = stationStore.getUserStations(loggedInUser.id);
+    
+    for (let i=0; i<allStations.length; i++) {
+      const station = allStations[i];
+      station.maxTemp = stationAnalytics.getMaxTemp(station);
+      station.minTemp = stationAnalytics.getMinTemp(station);
+      station.maxWindSpeed = stationAnalytics.getMaxWindSpeed(station);
+      station.minWindSpeed = stationAnalytics.getMinWindSpeed(station);
+      station.maxPressure = stationAnalytics.getMaxPressure(station);
+      station.minPressure = stationAnalytics.getMinPressure(station);
+    }
       
       
     const viewData = {

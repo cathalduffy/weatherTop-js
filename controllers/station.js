@@ -23,6 +23,13 @@ const station = {
     const minPressure = stationAnalytics.getMinPressure(station);
     const maxPressure = stationAnalytics.getMaxPressure(station);
     
+    station.maxTemp = stationAnalytics.getMaxTemp(station);
+    station.minTemp = stationAnalytics.getMinTemp(station);
+    station.maxWindSpeed = stationAnalytics.getMaxWindSpeed(station);
+    station.minWindSpeed = stationAnalytics.getMinWindSpeed(station);
+    station.maxPressure = stationAnalytics.getMaxPressure(station);
+    station.minPressure = stationAnalytics.getMinPressure(station);
+    
     
     const viewData = {
       title: "Station",
