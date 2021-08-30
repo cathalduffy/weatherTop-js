@@ -176,7 +176,7 @@ const stationAnalytics = {
   },
   
   getMaxWindSpeed(station) {
-    let maxWindSpeed = 0;
+    let maxWindSpeed = null;
     if (station.readings.length > 0) {
       maxWindSpeed = station.readings[0].windSpeed;
       for (let i = 1; i < station.readings.length; i++) {
@@ -193,7 +193,7 @@ const stationAnalytics = {
     if (station.readings.length > 0) {
       minWindSpeed = station.readings[0].windSpeed;
       for (let i = 1; i < station.readings.length; i++) {
-        if (station.readings[i].windSpeed < minWindSpeed.windSpeed) {
+        if (station.readings[i].windSpeed < minWindSpeed) {
           minWindSpeed = station.readings[i].windSpeed;
         }
       }
