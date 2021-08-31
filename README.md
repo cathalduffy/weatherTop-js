@@ -1,4 +1,4 @@
-Welcome to the Playlist 4
+Welcome to the WeatherStation app
 =========================
 
-Version 4 of the Playlist application
+Version 4 of the Weather station application
