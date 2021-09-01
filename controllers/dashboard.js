@@ -5,7 +5,9 @@ const logger = require("../utils/logger");
 const stationStore = require("../models/station-store");
 const uuid = require("uuid");
 const stationAnalytics = require('../utils/station-analytics');
+const station = require('./station.js');
 const axios = require("axios");
+//const oneCallRequest = `https://api.openweathermap.org/data/2.5/onecall?{{lat}}{{lng}}=metric&appid=2c9407bebff8d23f3e0083d7eb6fa6d6`
 
 const dashboard = {
   index(request, response) {
@@ -29,6 +31,8 @@ const dashboard = {
       station.minWindSpeed = stationAnalytics.getMinWindSpeed(station);
       station.maxPressure = stationAnalytics.getMaxPressure(station);
       station.minPressure = stationAnalytics.getMinPressure(station);
+      station.weatherIcon = stationAnalytics.weatherIcon(station);
+      station.latestWeather = stationAnalytics.latestWeather(station);
     }
       
       
@@ -52,7 +56,9 @@ const dashboard = {
     const newStation = {
       id: uuid.v1(),
       userid: loggedInUser.id,
-      title: request.body.title,
+      name: request.body.name,
+      lat: request.body.lat,
+      lng: request.body.lng,
       readings: []
     };
     logger.debug("Creating a new Station", newStation);

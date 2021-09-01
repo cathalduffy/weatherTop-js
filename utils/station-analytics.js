@@ -1,18 +1,21 @@
 "use strict";
 
+const stationStore = require('../models/station-store');
+const newStation = require("../controllers/dashboard");
+
 const stationAnalytics = {
 
   
   getLatestReading(station) {
-    let latestReading = null;
-    let weatherIcon = null;
+    let latestReading = 0;
+    let weatherIcon = 0;
     if (station.readings.length > 0) {
       latestReading = station.readings[station.readings.length - 1];
     }    
     station.code = latestReading.code;
     station.windBft = stationAnalytics.beafourt(latestReading.windSpeed);
     station.tempF = stationAnalytics.tempF(latestReading.temperature);
-    station.weather = stationAnalytics.codeToString(Number(latestReading.code));
+    //station.weather = stationAnalytics.codeToString(Number(latestReading.code));
     station.pressure = latestReading.pressure;
     station.tempC = latestReading.temperature
     station.windCompass = stationAnalytics.windCompass(latestReading.windDirection);
@@ -23,7 +26,7 @@ const stationAnalytics = {
   
     
 
-  codeToString(code) {
+  /*codeToString(code) {
         switch (code) {
             case 100:
                 return "Clear";
@@ -53,9 +56,9 @@ const stationAnalytics = {
     },
       setWeatherReport(weatherReport) {
         this.weatherReport = weatherReport;
-      },
+      },*/
 
-    weatherIcon(code) {
+   /* weatherIcon(code) {
         let weatherIcons = new Map();
         weatherIcons.put(100, "sun icon");
         weatherIcons.put(200, "cloud sun icon");
@@ -71,7 +74,87 @@ const stationAnalytics = {
 
   setWeatherIcon(weatherIcon) {
         this.weatherIcon = weatherIcon;
-    },
+    },*/
+  
+  weatherIcon(station) {
+    const latestReading = station.readings[station.readings.length - 1];
+    const code = station.code;
+    let weatherIcon = null;
+
+    if (code == 200 && code <= 232)
+      weatherIcon = "http://openweathermap.org/img/w/11d.png";
+    else if (code >= 300 && code <= 321)
+      weatherIcon = "http://openweathermap.org/img/w/09d.png";
+    else if (code >= 500 && code <= 504)
+      weatherIcon = "http://openweathermap.org/img/w/10d.png";
+    else if (code >= 511)
+      weatherIcon = "http://openweathermap.org/img/w/13d.png";
+    else if (code >= 520 && code <= 531)
+      weatherIcon = "http://openweathermap.org/img/w/09d.png";
+    else if (code >= 600 && code <= 622)
+      weatherIcon = "http://openweathermap.org/img/w/13d.png";
+    else if (code >= 701)
+      weatherIcon = "http://openweathermap.org/img/w/50d.png";
+    else if (code >= 711)
+      weatherIcon = "http://openweathermap.org/img/w/50d.png";
+    else if (code >= 721)
+      weatherIcon = "http://openweathermap.org/img/w/50d.png";
+    else if (code >= 731)
+      weatherIcon = "http://openweathermap.org/img/w/50d.png";
+    else if (code >= 741)
+      weatherIcon = "http://openweathermap.org/img/w/50d.png";
+    else if (code >= 751)
+      weatherIcon = "http://openweathermap.org/img/w/50d.png";
+    else if (code >= 761)
+      weatherIcon = "http://openweathermap.org/img/w/50d.png";
+    else if (code >= 762)
+      weatherIcon = "http://openweathermap.org/img/w/50d.png";
+    else if (code >= 771)
+      weatherIcon = "http://openweathermap.org/img/w/50d.png";
+    else if (code >= 781)
+      weatherIcon = "http://openweathermap.org/img/w/50d.png";
+    else if (code == 800)
+      weatherIcon = "http://openweathermap.org/img/w/01d.png";
+    else if (code == 801)
+      weatherIcon = "http://openweathermap.org/img/w/02d.png";
+    else if (code == 802)
+      weatherIcon = "http://openweathermap.org/img/w/03d.png";
+    else if (code == 803 || code == 804)
+      weatherIcon = "http://openweathermap.org/img/w/04d.png";
+    else weatherIcon = "http://openweathermap.org/img/w/01n.png";
+
+    return weatherIcon;
+  },
+
+  latestWeather(station) {
+    const latestReading = station.readings[station.readings.length - 1];
+    const code = station.code;
+    let latestWeather = null;
+
+    if (code == 200 && code <= 232) latestWeather = "Thunderstorm";
+    else if (code >= 300 && code <= 321) latestWeather = "Drizzle";
+    else if (code >= 500 && code <= 504) latestWeather = "Rain";
+    else if (code >= 511) latestWeather = "Rain";
+    else if (code >= 520 && code <= 531) latestWeather = "Rain";
+    else if (code >= 600 && code <= 622) latestWeather = "Snow";
+    else if (code >= 701) latestWeather = "Mist";
+    else if (code >= 711) latestWeather = "Smoke";
+    else if (code >= 721) latestWeather = "Haze";
+    else if (code >= 731) latestWeather = "Dust";
+    else if (code >= 741) latestWeather = "Fog";
+    else if (code >= 751) latestWeather = "Sand";
+    else if (code >= 761) latestWeather = "Dust";
+    else if (code >= 762) latestWeather = "Ash";
+    else if (code >= 771) latestWeather = "Squall";
+    else if (code >= 781) latestWeather = "Tornado";
+    else if (code == 800) latestWeather = "Clear";
+    else if (code == 801) latestWeather = "Clouds";
+    else if (code == 802) latestWeather = "Clouds";
+    else if (code == 803 || code == 804) latestWeather = "Clouds";
+    else latestWeather = "Null";
+
+    return latestWeather;
+  },
 
   tempF(tempC) {
     return (tempC * 1.8) + 32;
@@ -176,7 +259,7 @@ const stationAnalytics = {
   },
   
   getMaxWindSpeed(station) {
-    let maxWindSpeed = null;
+    let maxWindSpeed = 0;
     if (station.readings.length > 0) {
       maxWindSpeed = station.readings[0].windSpeed;
       for (let i = 1; i < station.readings.length; i++) {
@@ -202,7 +285,7 @@ const stationAnalytics = {
   },
   
   getMaxPressure(station) {
-    let maxPressure = null;
+    let maxPressure = 0;
     if (station.readings.length > 0) {
       maxPressure = station.readings[0].pressure;
       for (let i = 1; i < station.readings.length; i++) {
@@ -215,7 +298,7 @@ const stationAnalytics = {
   },
   
   getMinPressure(station) {
-    let minPressure = null;
+    let minPressure = 0;
     if (station.readings.length > 0) {
       minPressure = station.readings[0].pressure;
       for (let i = 1; i < station.readings.length; i++) {

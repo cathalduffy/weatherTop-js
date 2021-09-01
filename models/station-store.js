@@ -3,6 +3,8 @@
 const _ = require("lodash");
 const JsonStore = require("./json-store");
 const stationAnalytics = require("../utils/station-analytics")
+const axios = require("axios");
+const oneCallRequest = `https://api.openweathermap.org/data/2.5/onecall?lat=52.160858&lon=-7.152420&units=metric&appid=2c9407bebff8d23f3e0083d7eb6fa6d6`;
 
 const stationStore = {
   store: new JsonStore("./models/station-store.json", {
@@ -76,6 +78,20 @@ const stationStore = {
   
   weatherIcon() {
     return stationAnalytics.weatherIcon(this.code);
+  },
+  
+  getLat(id, reading) {
+    const station = this.getStation(id);
+    const readings = station.readings;
+    var lat = station.lat;
+    return lat;
+  },
+  
+  getLng(id, reading) {
+    const station = this.store.findOneBy(this.collection, { id: id });
+    const readings = station.readings;
+    var lng = station.lng;
+    return lng;
   },
 
 };
