@@ -5,7 +5,10 @@ const logger = require("../utils/logger");
 const stationStore = require("../models/station-store");
 const uuid = require("uuid");
 const stationAnalytics = require('../utils/station-analytics');
+const station = require('./station.js');
 const axios = require("axios");
+//const oneCallRequest = `https://api.openweathermap.org/data/2.5/onecall?lat=52.160858&lon=-7.152420&units=metric&appid=5fec940145740f91962fcb787072f7c4`
+
 
 const dashboard = {
   index(request, response) {
@@ -14,21 +17,23 @@ const dashboard = {
     const stationId = request.params.id;
     logger.debug("Station id = ", stationId);
     
-    const station = stationStore.getStation(stationId);
+    //const station = stationStore.getStation(stationId);
     const readingId = request.params.readingid;
     
-    const allStations = stationStore.getAllStations();
+    const getAllStations = stationStore.getAllStations();
        
     const stations = stationStore.getUserStations(loggedInUser.id);
     
-    for (let i=0; i<allStations.length; i++) {
-      const station = allStations[i];
+    for (let i=0; i<getAllStations.length; i++) {
+      const station = getAllStations[i];
       station.maxTemp = stationAnalytics.getMaxTemp(station);
       station.minTemp = stationAnalytics.getMinTemp(station);
       station.maxWindSpeed = stationAnalytics.getMaxWindSpeed(station);
       station.minWindSpeed = stationAnalytics.getMinWindSpeed(station);
       station.maxPressure = stationAnalytics.getMaxPressure(station);
       station.minPressure = stationAnalytics.getMinPressure(station);
+      station.weatherIcon = stationAnalytics.weatherIcon(station);
+      station.latestWeather = stationAnalytics.latestWeather(station);
     }
       
       
@@ -52,13 +57,17 @@ const dashboard = {
     const newStation = {
       id: uuid.v1(),
       userid: loggedInUser.id,
-      title: request.body.title,
+      name: request.body.name,
+      lat: request.body.lat,
+      lng: request.body.lng,
       readings: []
     };
     logger.debug("Creating a new Station", newStation);
     stationStore.addStation(newStation);
     response.redirect("/dashboard");
-  }
+  },
+  
 };
 
 module.exports = dashboard;
+

@@ -3,6 +3,7 @@
 const logger = require("../utils/logger");
 const stationStore = require("../models/station-store");
 
+
 const reading = {
   index(request, response) {
     const stationId = request.params.id;
@@ -19,13 +20,28 @@ const reading = {
   update(request, response) {
     const stationId = request.params.id;
     const readingId = request.params.readingid;
-    const reading = stationStore.getReading(stationId, readingId)
+    const reading = stationStore.getReading(stationId, readingId);
+  
+    var unix_timestamp = Math.floor(Date.now() / 1000);
+    var date = new Date(unix_timestamp * 1000);
+    date =
+      date.getDate() +
+      "/" +
+      date.getMonth() +
+      "/" +
+      date.getFullYear() +
+      " " +
+      (1 + date.getHours()) +
+      ":" +
+      date.getMinutes().toFixed(2);
+    
     const newReading = {
-      code: request.body.code,
-      temperature: request.body.temperature,
-      windSpeed: request.body.windSpeed,
-      pressure: request.body.pressure,
-      windDirection: request.body.windDirection,
+      date: Number(request.body.date),
+      code: Number(request.body.code),
+      temperature: Number(request.body.temperature),
+      windSpeed: Number(request.body.windSpeed),
+      pressure: Number(request.body.pressure),
+      windDirection: Number(request.body.windDirection),
     };
     logger.debug(`Updating Reading ${readingId} from Station ${stationId}`);
     stationStore.updateReading(reading, newReading);
@@ -34,3 +50,4 @@ const reading = {
 };
 
 module.exports = reading;
+
