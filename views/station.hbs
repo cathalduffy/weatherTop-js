@@ -1,11 +1,49 @@
 {{> menu}}
 
-<section class="ui segment">
-  <h2 class="ui huge header aligned violet header">
+<section class="ui segment inverted teal">
+  <h2 class="ui huge header aligned header">
     {{station.name}}
   </h2>
 
     {{> stationCards}}
     {{> listreadings}}
     {{> addreading}}
+</section>
+<form class="ui stacked segment inverted form" action="/station/{{station.id}}/addreport" method="POST">
+  <section class="ui center aligned middle aligned inverted black segment">
+<button class="ui centered orange submit button">Auto Update Readings</button>
+</section>
+</form>
+
+
+<section class="ui center aligned middle aligned segment">
+<div id="chart"></div>
+
+<script>
+  const data = {
+    labels: [
+      {{#each tempGraph.trendLabel}}
+        "{{this}}",
+      {{/each}}
+    ],
+    datasets: [
+      {
+        name: "Temperature", type: "line",
+        values: [
+          {{#each tempGraph.tempTrend}}
+            {{this}},
+          {{/each}}
+        ]
+      }
+    ]
+  }
+console.log('data',data)
+  const chart = new frappe.Chart("#chart", {
+    title: "Temperature Trend",
+    data: data,
+    type: 'line',
+    height: 250,
+    colors: ['red']
+  })
+</script>
 </section>

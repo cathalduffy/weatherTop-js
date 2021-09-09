@@ -1,18 +1,18 @@
-<div class="ui inverted yellow segment">
+<div class="ui inverted teal segment">
     <div class="ui five stackable inverted cards">
         <div class="card">
     <span class="content centre">
     <h2> {{station.name}}<i class="right floated large purple location arrow icon"></i></h2>
       <br>Lat: {{station.lat}}
-      <br>Lat: {{station.lng}}
+      <br>Lon: {{station.lng}}
     
     </span>
         </div>
       
         <div class="card">
     <span class="content centre">
-    <h2>Weather <i class="right floated large red {{../station.weatherIcon}}"></i></h2>
-    <br>{{station.weather}}
+    <h2>Weather <img src="{{station.weatherIcon}}"></i></h2>
+    <br>{{station.latestWeather}}
     </span>
         </div>
       
@@ -28,7 +28,7 @@
 
         <div class="card">
     <span class="content centre">
-      <h2>Wind <i class="right floated large green wind icon"></i></h2>
+      <h2>Wind <i class="right floated large green up wind icon"></i></h2>
       <br>{{station.windBft}} bft
       <br>{{station.windCompass}}
       <br>Feels like {{station.windChill}}

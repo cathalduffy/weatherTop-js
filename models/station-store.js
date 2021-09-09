@@ -3,6 +3,7 @@
 const _ = require("lodash");
 const JsonStore = require("./json-store");
 const stationAnalytics = require("../utils/station-analytics")
+const axios = require("axios");
 
 const stationStore = {
   store: new JsonStore("./models/station-store.json", {
@@ -53,12 +54,11 @@ const stationStore = {
 
   getReading(id, readingId) {
     const station = this.store.findOneBy(this.collection, { id: id });
-    const readings = station.readings.filter(reading => readings.id == readingId);
+    const readings = station.readings.filter(reading => reading.id == readingId);
     return readings[0];
   },
 
   updateReading(reading, updatedReading) {
-    reading.id = updatedReading.id;
     reading.code = updatedReading.code;
     reading.temperature = updatedReading.temperature;
     reading.windSpeed = updatedReading.windSpeed;
@@ -77,9 +77,22 @@ const stationStore = {
   weatherIcon() {
     return stationAnalytics.weatherIcon(this.code);
   },
+  
+  getLat(id, reading) {
+    const station = this.getStation(id);
+    const readings = station.readings;
+    var lat = station.lat;
+    return lat;
+  },
+  
+  getLng(id, reading) {
+    const station = this.store.findOneBy(this.collection, { id: id });
+    const readings = station.readings;
+    var lng = station.lng;
+    return lng;
+  },
 
 };
 
-  
-
 module.exports = stationStore;
+
