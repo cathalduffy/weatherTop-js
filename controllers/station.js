@@ -117,8 +117,6 @@ const station = {
       report.windSpeed = reading.wind_speed;
       report.pressure = reading.pressure;
       report.windDirection = reading.wind_deg;
-      report.icon = reading.weather[0].icon;
-      report.main = reading.weather[0].main;
       
       report.tempTrend = [];
       report.trendLabels = [];
@@ -139,9 +137,7 @@ const station = {
       windDirection: report.windDirection,
       pressure: report.pressure,
       tempTrend: report.tempTrend,
-      trendLabel: report.trendLabels,
-      main: report.main,
-      icon: "http://openweathermap.org/img/w/" + report.icon + ".png",
+      trendLabel: report.trendLabels,  
       };
     logger.info("New Reading ", newReading);
     stationStore.addReading(stationId, newReading);

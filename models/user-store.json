@@ -34,6 +34,13 @@
       "email": "123@gmail.com",
       "password": "secret",
       "id": "5de28990-11ab-11ec-9de9-25ce65cd3884"
+    },
+    {
+      "firstname": "new ",
+      "lastname": "name",
+      "email": "123@gmail.com",
+      "password": "123",
+      "id": "df856690-1253-11ec-963c-07f8ce9790f0"
     }
   ]
 }
