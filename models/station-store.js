@@ -74,10 +74,6 @@ const stationStore = {
     this.longitude = longitude;
   },
   
-  weatherIcon() {
-    return stationAnalytics.weatherIcon(this.code);
-  },
-  
   getLat(id, reading) {
     const station = this.getStation(id);
     const readings = station.readings;
@@ -94,5 +90,9 @@ const stationStore = {
 
 };
 
+  
+
 module.exports = stationStore;
+
+
 

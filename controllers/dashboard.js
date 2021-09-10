@@ -7,7 +7,6 @@ const uuid = require("uuid");
 const stationAnalytics = require('../utils/station-analytics');
 const station = require('./station.js');
 const axios = require("axios");
-//const oneCallRequest = `https://api.openweathermap.org/data/2.5/onecall?lat=52.160858&lon=-7.152420&units=metric&appid=5fec940145740f91962fcb787072f7c4`
 
 
 const dashboard = {
@@ -17,7 +16,6 @@ const dashboard = {
     const stationId = request.params.id;
     logger.debug("Station id = ", stationId);
     
-    //const station = stationStore.getStation(stationId);
     const readingId = request.params.readingid;
     
     const getAllStations = stationStore.getAllStations();

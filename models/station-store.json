@@ -8,14 +8,6 @@
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "readings": [
         {
-          "id": "02",
-          "code": "800",
-          "temperature": "0.5",
-          "windSpeed": "3.5",
-          "pressure": "1002",
-          "windDirection": "90"
-        },
-        {
           "id": "03",
           "code": "600",
           "temperature": "6",
@@ -35,171 +27,176 @@
           "icon": "http://openweathermap.org/img/w/01n.png"
         },
         {
-          "id": "592981f0-1085-11ec-a105-891371325920",
-          "date": "8/9/2021 10:15",
-          "code": 800,
-          "temperature": 19.38,
-          "windSpeed": 1.34,
-          "windDirection": 141,
-          "pressure": 1009,
-          "icon": "http://openweathermap.org/img/w/undefined.png",
+          "id": "32ae2680-11a6-11ec-a3a6-09c5c33b5a7f",
+          "date": "9/9/2021 20:43",
+          "code": 803,
+          "temperature": 17.23,
+          "windSpeed": 1.03,
+          "windDirection": 0,
+          "pressure": 1004,
           "tempTrend": [
-            18.73,
-            18.65,
-            15.76,
-            16.7,
-            15.72,
-            14.94,
-            16.29,
-            16.59
-          ],
-          "trendLabel": [
-            "8/8/2021",
-            "9/8/2021",
-            "10/8/2021",
-            "11/8/2021",
-            "12/8/2021",
-            "13/8/2021",
-            "14/8/2021",
-            "15/8/2021"
-          ]
-        },
-        {
-          "id": "4029db30-1091-11ec-9a88-c510c502d9f8",
-          "date": "8/9/2021 11:40",
-          "code": 802,
-          "temperature": 19.28,
-          "windSpeed": 1.79,
-          "windDirection": 152,
-          "pressure": 1009,
-          "icon": "http://openweathermap.org/img/w/undefined.png",
-          "tempTrend": [
-            19.08,
-            18.65,
-            15.76,
-            16.7,
-            15.72,
-            14.94,
-            16.29,
-            16.59
-          ],
-          "trendLabel": [
-            "8/8/2021",
-            "9/8/2021",
-            "10/8/2021",
-            "11/8/2021",
-            "12/8/2021",
-            "13/8/2021",
-            "14/8/2021",
-            "15/8/2021"
-          ],
-          "reading": {
-            "date": "8/9/2021 11:40",
-            "code": 802,
-            "temperature": 19.28,
-            "windSpeed": 1.79,
-            "pressure": 1009,
-            "windDirection": 152,
-            "tempTrend": [
-              19.08,
-              18.65,
-              15.76,
-              16.7,
-              15.72,
-              14.94,
-              16.29,
-              16.59
-            ],
-            "trendLabels": [
-              "8/8/2021",
-              "9/8/2021",
-              "10/8/2021",
-              "11/8/2021",
-              "12/8/2021",
-              "13/8/2021",
-              "14/8/2021",
-              "15/8/2021"
-            ]
-          }
-        },
-        {
-          "id": "9209cf20-10ee-11ec-8550-8f8cdd6755f4",
-          "date": "8/9/2021 22:48",
-          "code": 804,
-          "temperature": 16.86,
-          "windSpeed": 0.89,
-          "windDirection": 142,
-          "pressure": 1007,
-          "tempTrend": [
-            18.92,
-            18.34,
-            17.37,
-            17.66,
-            15.54,
-            15.38,
-            16.8,
-            18.35
-          ],
-          "trendLabel": [
-            "8/8/2021",
-            "9/8/2021",
-            "10/8/2021",
-            "11/8/2021",
-            "12/8/2021",
-            "13/8/2021",
-            "14/8/2021",
-            "15/8/2021"
-          ]
-        },
-        {
-          "id": "f164c210-11c3-11ec-b51d-0d242a2888a5",
-          "date": "9/9/2021 24:16",
-          "code": 804,
-          "temperature": 16.85,
-          "windSpeed": 0.45,
-          "windDirection": 257,
-          "pressure": 1005,
-          "tempTrend": [
+            17.98,
             17.38,
             18.13,
             13.12,
             14.83,
             17.3,
             17.27,
-            18.58,
-            15.29
+            18.58
           ],
           "trendLabel": [
+            "9/8/2021",
             "10/8/2021",
             "11/8/2021",
             "12/8/2021",
             "13/8/2021",
             "14/8/2021",
             "15/8/2021",
-            "16/8/2021",
-            "17/8/2021"
+            "16/8/2021"
+          ]
+        },
+        {
+          "id": "91c8a860-11a7-11ec-b787-171a30bea02c",
+          "date": "9/9/2021 20:53",
+          "code": 803,
+          "temperature": 17.23,
+          "windSpeed": 0.45,
+          "windDirection": 243,
+          "pressure": 1004,
+          "tempTrend": [
+            17.98,
+            17.38,
+            18.13,
+            13.12,
+            14.83,
+            17.3,
+            17.27,
+            18.58
+          ],
+          "trendLabel": [
+            "9/8/2021",
+            "10/8/2021",
+            "11/8/2021",
+            "12/8/2021",
+            "13/8/2021",
+            "14/8/2021",
+            "15/8/2021",
+            "16/8/2021"
+          ],
+          "main": "Clouds",
+          "icon": "http://openweathermap.org/img/w/04n.png"
+        },
+        {
+          "id": "d447ae30-11ab-11ec-9de9-25ce65cd3884",
+          "date": "9/9/2021 21:23",
+          "code": 803,
+          "temperature": 17.23,
+          "windSpeed": 1.03,
+          "windDirection": 0,
+          "pressure": 1004,
+          "tempTrend": [
+            17.98,
+            17.38,
+            18.13,
+            13.12,
+            14.83,
+            17.3,
+            17.27,
+            18.58
+          ],
+          "trendLabel": [
+            "9/8/2021",
+            "10/8/2021",
+            "11/8/2021",
+            "12/8/2021",
+            "13/8/2021",
+            "14/8/2021",
+            "15/8/2021",
+            "16/8/2021"
+          ],
+          "main": "Clouds",
+          "icon": "http://openweathermap.org/img/w/04n.png"
+        },
+        {
+          "id": "b6ac4d50-11b9-11ec-b1d9-9db21b3e457d",
+          "date": "9/9/2021 23:3",
+          "code": 804,
+          "temperature": 16.84,
+          "windSpeed": 1.64,
+          "windDirection": 204,
+          "pressure": 1004,
+          "tempTrend": [
+            17.98,
+            17.38,
+            18.13,
+            13.12,
+            14.83,
+            17.3,
+            17.27,
+            18.58
+          ],
+          "trendLabel": [
+            "9/8/2021",
+            "10/8/2021",
+            "11/8/2021",
+            "12/8/2021",
+            "13/8/2021",
+            "14/8/2021",
+            "15/8/2021",
+            "16/8/2021"
+          ],
+          "main": "Clouds",
+          "icon": "http://openweathermap.org/img/w/04n.png"
+        },
+        {
+          "id": "1ff701b0-11bf-11ec-81d8-e73420dde27b",
+          "date": "9/9/2021 23:41",
+          "code": 804,
+          "temperature": 16.7,
+          "windSpeed": 1.37,
+          "windDirection": 215,
+          "pressure": 1004,
+          "tempTrend": [
+            17.98,
+            17.38,
+            18.13,
+            13.12,
+            14.83,
+            17.3,
+            17.27,
+            18.58
+          ],
+          "trendLabel": [
+            "9/8/2021",
+            "10/8/2021",
+            "11/8/2021",
+            "12/8/2021",
+            "13/8/2021",
+            "14/8/2021",
+            "15/8/2021",
+            "16/8/2021"
           ],
           "main": "Clouds",
           "icon": "http://openweathermap.org/img/w/04n.png"
         }
       ],
       "windBft": 1,
-      "tempF": 59,
+      "tempF": 62.06,
       "weather": "Rain",
       "degreesToCompass": "East South East",
-      "windChill": "17.02",
-      "windCompass": "South South East",
-      "maxTemp": 19.38,
-      "minTemp": "0.5",
-      "maxWindSpeed": "3.5",
+      "windChill": "18.51",
+      "windCompass": "South West",
+      "maxTemp": 17.23,
+      "minTemp": "6",
+      "maxWindSpeed": "2",
       "minWindSpeed": 0.45,
       "maxPressure": 1022,
-      "minPressure": "1002",
+      "minPressure": "1004",
       "weatherIcon": "http://openweathermap.org/img/w/13d.png",
       "latestWeather": "Snow",
-      "code": "700",
-      "pressure": "1002",
-      "tempC": "15"
+      "code": 804,
+      "pressure": 1004,
+      "tempC": 16.7
     },
     {
       "id": "02",
@@ -217,28 +214,49 @@
           "windDirection": "98"
         },
         {
-          "id": "07",
-          "code": "200",
-          "temperature": "0.5",
-          "windSpeed": "3.5",
-          "pressure": "1000",
-          "windDirection": "102"
+          "id": "c8925f20-11a3-11ec-a0b9-ff1ee1ed989d",
+          "date": "9/9/2021 20:26",
+          "code": 803,
+          "temperature": 16.82,
+          "windSpeed": 2.57,
+          "windDirection": 240,
+          "pressure": 1005,
+          "tempTrend": [
+            17.86,
+            17.06,
+            17.7,
+            12.99,
+            14.65,
+            17.06,
+            17.02,
+            18.06
+          ],
+          "trendLabel": [
+            "9/8/2021",
+            "10/8/2021",
+            "11/8/2021",
+            "12/8/2021",
+            "13/8/2021",
+            "14/8/2021",
+            "15/8/2021",
+            "16/8/2021"
+          ]
         }
       ],
-      "code": 802,
+      "code": 803,
       "windBft": 1,
-      "tempF": 65.822,
+      "tempF": 62.275999999999996,
       "weather": "Partial Clouds",
-      "pressure": 1009,
-      "tempC": 18.79,
+      "pressure": 1005,
+      "tempC": 16.82,
       "degreesToCompass": "East South East",
-      "windChill": "19.88",
-      "windCompass": "South South East",
-      "maxTemp": "8",
-      "minTemp": "0.5",
-      "maxWindSpeed": "3.5",
+      "windChill": "18.11",
+      "windCompass": "West South West",
+      "maxTemp": 16.82,
+      "minTemp": "8",
+      "maxWindSpeed": 2.57,
       "minWindSpeed": "1",
-      "maxPressure": "999",
+      "maxPressure": 1005,
       "minPressure": "999",
       "weatherIcon": "http://openweathermap.org/img/w/13d.png",
       "latestWeather": "Snow"
@@ -434,79 +452,52 @@
           "icon": "http://openweathermap.org/img/w/01n.png"
         },
         {
-          "id": "b2fde9d0-1091-11ec-9d30-f7087487a0eb",
-          "date": "8/9/2021 11:44",
+          "id": "024dcfe0-11a6-11ec-a1e7-170b5eabc5c5",
+          "date": "9/9/2021 20:42",
           "code": 800,
-          "temperature": 30.01,
-          "windSpeed": 2.57,
-          "windDirection": 50,
-          "pressure": 1013,
-          "icon": "http://openweathermap.org/img/w/undefined.png",
+          "temperature": 32.01,
+          "windSpeed": 2.06,
+          "windDirection": 120,
+          "pressure": 1011,
           "tempTrend": [
-            30.01,
-            32.19,
-            32.97,
-            33.75,
-            29.24,
-            32.74,
-            33.1,
-            31.64
+            31.99,
+            32.88,
+            30.98,
+            26.6,
+            31.18,
+            32.72,
+            33.41,
+            33.63
           ],
           "trendLabel": [
-            "8/8/2021",
             "9/8/2021",
             "10/8/2021",
             "11/8/2021",
             "12/8/2021",
             "13/8/2021",
             "14/8/2021",
-            "15/8/2021"
+            "15/8/2021",
+            "16/8/2021"
           ],
-          "reading": {
-            "date": "8/9/2021 11:44",
-            "code": 800,
-            "temperature": 30.01,
-            "windSpeed": 2.57,
-            "pressure": 1013,
-            "windDirection": 50,
-            "tempTrend": [
-              30.01,
-              32.19,
-              32.97,
-              33.75,
-              29.24,
-              32.74,
-              33.1,
-              31.64
-            ],
-            "trendLabels": [
-              "8/8/2021",
-              "9/8/2021",
-              "10/8/2021",
-              "11/8/2021",
-              "12/8/2021",
-              "13/8/2021",
-              "14/8/2021",
-              "15/8/2021"
-            ]
-          }
+          "main": "Clear",
+          "icon": "http://openweathermap.org/img/w/01n.png"
         }
       ],
-      "maxTemp": 31.01,
-      "minTemp": 30.01,
+      "maxTemp": 32.01,
+      "minTemp": 31.01,
       "maxWindSpeed": 2.57,
-      "minWindSpeed": 2.57,
-      "maxPressure": 1013,
+      "minWindSpeed": 2.06,
+      "maxPressure": 1012,
       "minPressure": 1012,
       "weatherIcon": "http://openweathermap.org/img/w/13d.png",
       "latestWeather": "Snow",
       "windBft": 1,
-      "tempF": 86.018,
-      "windCompass": "East North East",
-      "windChill": "32.39",
+      "tempF": 89.618,
+      "windCompass": "East South East",
+      "windChill": "34.50",
       "code": 800,
-      "pressure": 1013,
-      "tempC": 30.01
+      "pressure": 1011,
+      "tempC": 32.01
     }
   ]
 }
