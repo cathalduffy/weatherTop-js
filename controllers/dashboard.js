@@ -4,10 +4,9 @@ const accounts = require("./accounts.js");
 const logger = require("../utils/logger");
 const stationStore = require("../models/station-store");
 const uuid = require("uuid");
-const stationAnalytics = require('../utils/station-analytics');
-const station = require('./station.js');
+const stationAnalytics = require("../utils/station-analytics");
+const station = require("./station.js");
 const axios = require("axios");
-
 
 const dashboard = {
   index(request, response) {
@@ -15,14 +14,14 @@ const dashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     const stationId = request.params.id;
     logger.debug("Station id = ", stationId);
-    
+
     const readingId = request.params.readingid;
-    
+
     const getAllStations = stationStore.getAllStations();
-       
+
     const stations = stationStore.getUserStations(loggedInUser.id);
-    
-    for (let i=0; i<getAllStations.length; i++) {
+
+    for (let i = 0; i < getAllStations.length; i++) {
       const station = getAllStations[i];
       station.maxTemp = stationAnalytics.getMaxTemp(station);
       station.minTemp = stationAnalytics.getMinTemp(station);
@@ -33,11 +32,10 @@ const dashboard = {
       station.weatherIcon = stationAnalytics.weatherIcon(station);
       station.latestWeather = stationAnalytics.latestWeather(station);
     }
-      
-      
+
     const viewData = {
       title: "Station Dashboard",
-      stations: stations,
+      stations: stations
     };
     logger.info("about to render", stationStore.getAllStations());
     response.render("dashboard", viewData);
@@ -63,9 +61,7 @@ const dashboard = {
     logger.debug("Creating a new Station", newStation);
     stationStore.addStation(newStation);
     response.redirect("/dashboard");
-  },
-  
+  }
 };
 
 module.exports = dashboard;
-

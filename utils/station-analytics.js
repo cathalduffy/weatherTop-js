@@ -1,28 +1,31 @@
 "use strict";
 
-const stationStore = require('../models/station-store');
+const stationStore = require("../models/station-store");
 
 const stationAnalytics = {
-
-  
   getLatestReading(station) {
     let latestReading = 0;
     let weatherIcon = 0;
     if (station.readings.length > 0) {
       latestReading = station.readings[station.readings.length - 1];
-    }    
+    }
     station.code = latestReading.code;
     station.windBft = stationAnalytics.beafourt(latestReading.windSpeed);
-    station.tempF = stationAnalytics.tempF(Number(latestReading.temperature).toFixed(2));
+    station.tempF = stationAnalytics.tempF(
+      Number(latestReading.temperature).toFixed(2)
+    );
     station.pressure = latestReading.pressure;
-    station.tempC = latestReading.temperature
-    station.windCompass = stationAnalytics.windCompass(latestReading.windDirection);
-    station.windChill = stationAnalytics.windChill(latestReading.temperature, latestReading.windSpeed).toFixed(2);
-    
+    station.tempC = latestReading.temperature;
+    station.windCompass = stationAnalytics.windCompass(
+      latestReading.windDirection
+    );
+    station.windChill = stationAnalytics
+      .windChill(latestReading.temperature, latestReading.windSpeed)
+      .toFixed(2);
+
     return latestReading;
   },
-  
-  
+
   weatherIcon(station) {
     const latestReading = station.readings[station.readings.length - 1];
     const code = station.code;
@@ -104,9 +107,9 @@ const stationAnalytics = {
   },
 
   tempF(tempC) {
-    return (tempC * 1.8) + 32;
+    return tempC * 1.8 + 32;
   },
-  
+
   beafourt(windspeed) {
     if (windspeed == 0) {
       return 0;
@@ -138,8 +141,7 @@ const stationAnalytics = {
     return -1;
   },
 
-  windCompass(deg) 
-  {
+  windCompass(deg) {
     if (deg > 11.25 && deg <= 33.75) {
       return "North North East";
     } else if (deg > 33.75 && deg <= 56.25) {
@@ -174,11 +176,16 @@ const stationAnalytics = {
       return "North";
     }
   },
-  
+
   windChill(temp, windspeed) {
-    return 13.12 + 0.6215 * temp -  11.37 * (Math.pow(windspeed, 0.16)) + 0.3965 * temp * (Math.pow(windspeed, 0.16));
+    return (
+      13.12 +
+      0.6215 * temp -
+      11.37 * Math.pow(windspeed, 0.16) +
+      0.3965 * temp * Math.pow(windspeed, 0.16)
+    );
   },
-  
+
   getMaxTemp(station) {
     let maxTemp = 0;
     if (station.readings.length > 0) {
@@ -191,7 +198,7 @@ const stationAnalytics = {
     }
     return maxTemp;
   },
-  
+
   getMinTemp(station) {
     let minTemp = 0;
     if (station.readings.length > 0) {
@@ -204,7 +211,7 @@ const stationAnalytics = {
     }
     return minTemp;
   },
-  
+
   getMaxWindSpeed(station) {
     let maxWindSpeed = 0;
     if (station.readings.length > 0) {
@@ -217,7 +224,7 @@ const stationAnalytics = {
     }
     return maxWindSpeed;
   },
-  
+
   getMinWindSpeed(station) {
     let minWindSpeed = 0;
     if (station.readings.length > 0) {
@@ -230,7 +237,7 @@ const stationAnalytics = {
     }
     return minWindSpeed;
   },
-  
+
   getMaxPressure(station) {
     let maxPressure = 0;
     if (station.readings.length > 0) {
@@ -243,7 +250,7 @@ const stationAnalytics = {
     }
     return maxPressure;
   },
-  
+
   getMinPressure(station) {
     let minPressure = 0;
     if (station.readings.length > 0) {
@@ -255,9 +262,6 @@ const stationAnalytics = {
       }
     }
     return minPressure;
-  },
-  
-
-
+  }
 };
 module.exports = stationAnalytics;

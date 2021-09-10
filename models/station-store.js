@@ -2,7 +2,7 @@
 
 const _ = require("lodash");
 const JsonStore = require("./json-store");
-const stationAnalytics = require("../utils/station-analytics")
+const stationAnalytics = require("../utils/station-analytics");
 const axios = require("axios");
 
 const stationStore = {
@@ -54,7 +54,9 @@ const stationStore = {
 
   getReading(id, readingId) {
     const station = this.store.findOneBy(this.collection, { id: id });
-    const readings = station.readings.filter(reading => reading.id == readingId);
+    const readings = station.readings.filter(
+      reading => reading.id == readingId
+    );
     return readings[0];
   },
 
@@ -66,33 +68,26 @@ const stationStore = {
     reading.windDirection = updatedReading.windDirection;
     this.store.save();
   },
-   
-  Station(name,latitude,longitude)
-  {
+
+  Station(name, latitude, longitude) {
     this.name = name;
     this.latitude = latitude;
     this.longitude = longitude;
   },
-  
+
   getLat(id, reading) {
     const station = this.getStation(id);
     const readings = station.readings;
     var lat = station.lat;
     return lat;
   },
-  
+
   getLng(id, reading) {
     const station = this.store.findOneBy(this.collection, { id: id });
     const readings = station.readings;
     var lng = station.lng;
     return lng;
-  },
-
+  }
 };
 
-  
-
 module.exports = stationStore;
-
-
-

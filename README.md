@@ -27,3 +27,4 @@ signup.hbs(view) A simple form that allows the user to sign up to an account.
 station.hbs (view) Calling many of my partials (i.e stationCards.hbs) to display information on my station page. Also contains my tempTrend graph that is calling data by going through the addreading function in my staiton controller and pulling the data from the array in the json file
 
 Known bugs/problems:
+Issues with the weatherIcon appearing incorrectly sometimes. May be an issue with the data
