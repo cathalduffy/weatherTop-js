@@ -20,6 +20,20 @@
       "email": "a@a.com",
       "password": "123",
       "id": "daa5ec70-044e-11ec-9fa6-f7e887598844"
+    },
+    {
+      "firstName": "Cathal",
+      "lastName": "Duffy",
+      "email": "cduffy@tfd.ie",
+      "password": "1234",
+      "id": "2b77e400-11ab-11ec-bfd7-99b19e1b7317"
+    },
+    {
+      "firstName": "Cathal",
+      "lastName": "Duffy",
+      "email": "123@gmail.com",
+      "password": "secret",
+      "id": "5de28990-11ab-11ec-9de9-25ce65cd3884"
     }
   ]
 }

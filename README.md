@@ -1,4 +1,4 @@
-Welcome to the WeatherStation app
+Welcome to the Weather Station App
 =========================
 
-Version 4 of the Weather station application
+

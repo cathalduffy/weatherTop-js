@@ -50,17 +50,6 @@ const station = {
     logger.info("about to render", stationStore.getStation(stationId));
     response.render("station", viewData);
   },
-  
-  /*graphData(request, response) {
-    const stationId = request.params.id;
-    const station = stationStore.getStation(stationId);
-    
-    const viewData = {
-      tempGraph: stationStore.getStation(stationId).readings.pop, 
-    };
-    logger.info("about to render", stationStore.getStation(stationId));
-    response.render("station", viewData);
-  },*/
 
   deleteReading(request, response) {
     const stationId = request.params.id;
@@ -161,4 +150,3 @@ const station = {
 };
 
 module.exports = station;
-
