@@ -14,7 +14,6 @@ const stationAnalytics = {
     station.code = latestReading.code;
     station.windBft = stationAnalytics.beafourt(latestReading.windSpeed);
     station.tempF = stationAnalytics.tempF(Number(latestReading.temperature).toFixed(2));
-    //station.weather = stationAnalytics.codeToString(Number(latestReading.code));
     station.pressure = latestReading.pressure;
     station.tempC = latestReading.temperature
     station.windCompass = stationAnalytics.windCompass(latestReading.windDirection);
